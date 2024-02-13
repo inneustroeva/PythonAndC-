@@ -1,0 +1,19 @@
+# Задача 6 (Вариант 6) Неустроева Ирина, НБИ-02-23 
+
+def is_palim(num):  # создаем функцию
+    num=str(num) # превращаем наше число в строковый тип
+    return num==num[::-1] # переворачиваем и сравниваем с исходным
+
+num1=int(input('Введите первое число: '))
+num2=int(input('Введите второе число: '))
+
+if is_palim(num1) and is_palim(num2):
+    print('2 числа - палиндромы')
+elif is_palim(num1) or is_palim(num2):
+    print('1 из чисел - палиндром')
+    if is_palim(num1):
+        print(num1)
+    else:
+        print(num2)
+else:
+    print('Палиндромов не обнаруженно')
