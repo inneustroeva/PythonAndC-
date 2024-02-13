@@ -1,0 +1,20 @@
+// Задача 4 (Вариант 6)  Неустроева Ирина, НБИ-02-23
+#include<iostream> 
+using namespace std; 
+int nod(int a, int b) { 
+ if (a == 0 || b == 0) 
+  return a + b; 
+ else 
+  if (a > b) 
+   return nod(a % b, b); 
+  else 
+   return nod(a, b % a); 
+} 
+int main(){ 
+int a, b; 
+cin>>a; 
+cin>>b; 
+int p = a / nod(a, b); 
+int q = b / nod(a, b); 
+cout <<p<< " "<<q; 
+}
